@@ -63,7 +63,7 @@ function SideMenu({}: {}) {
   return (
     <Container
       className={clsx(
-        "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] bg-white",
+        "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] bg-background",
         {
           "absolute md:fixed md:left-0 -left-[52px] md:w-[52px] w-auto":
             minimize,
