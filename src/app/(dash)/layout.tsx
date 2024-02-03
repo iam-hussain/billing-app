@@ -12,7 +12,7 @@ export default function Dash({ children }: { children: React.ReactNode }) {
 
         <Separator className="my-4" />
         <Container className="w-full">
-          <UserBadge name={"John Wick"} role={"Admin"} image={""} />
+          <UserBadge name={"John Wick"} image={""} />
         </Container>
         <Separator className="my-4" />
         <BrandStack className="w-full h-14" />
