@@ -10,6 +10,7 @@ import {
   FormField,
   FormItem,
   FormMessage,
+  FormLabel,
 } from "@/components/patterns/form";
 import { Input } from "@/components/patterns/input";
 import schemas, { LoginSchemaValues } from "@/validations";
@@ -37,13 +38,26 @@ function LoginForm({ redirect }: LoginFormProps) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+        <FormField
+          control={form.control}
+          name="slug"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Store Slug</FormLabel>
+              <FormControl>
+                <Input placeholder="aaa-canteen" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Password</FormLabel> */}
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Username"
@@ -60,7 +74,7 @@ function LoginForm({ redirect }: LoginFormProps) {
           name="password"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Password</FormLabel> */}
+              <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input
                   autoComplete="new-password"
@@ -73,9 +87,11 @@ function LoginForm({ redirect }: LoginFormProps) {
             </FormItem>
           )}
         />
-        <Button className="w-full mt-8" type="submit">
-          Next
-        </Button>
+        <div className="pt-4">
+          <Button className="w-full" type="submit">
+            Sign In
+          </Button>
+        </div>
       </form>
     </Form>
   );

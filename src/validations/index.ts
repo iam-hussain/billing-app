@@ -6,10 +6,11 @@ const username = string({ type: "username", length: "4-20" });
 const password = string({ length: "6-20" });
 const name = string({ length: "4-20" });
 const deck = string({ length: "4-20" });
+const slug = string({ length: "4-20" });
 const categoryId = string();
 
 const schemas = {
-  login: z.object({ username, password }),
+  login: z.object({ username, password, slug }),
   register: z.object({ email, username, password }),
   product: z.object({ name, deck, categoryId }),
 };
