@@ -67,7 +67,7 @@ function TopMenu({}: {}) {
     >
       <div className="flex justify-center align-middle items-center">
         <Button
-          variant={"ghost"}
+          variant={"transparent"}
           className={clsx("flex font-normal md:hidden", {})}
           onClick={() => setMinimize()}
         >
