@@ -28,7 +28,7 @@ function UserMenu() {
           <UserBadge name="Zakir Hussain" image="" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 mr-5">
+      <DropdownMenuContent className="w-56" align="end">
         <DropdownMenuLabel>Zakir Huusain</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

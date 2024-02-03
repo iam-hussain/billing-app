@@ -1,16 +1,13 @@
 "use client";
 
 import { Container } from "@/components/atoms/container";
-import { Separator } from "@/components/atoms/separator";
 import Icon, { IconKey } from "@/components/atoms/icon";
-import MenuItem from "@/components/molecules/menu-item";
-import { ScrollArea } from "@/components/atoms/scroll-area";
 import { Button } from "@/components/atoms/button";
-import BrandStack from "@/components/atoms/brand/stack";
 import clsx from "clsx";
 import { useActionStore } from "@/stores/actionSlice";
 import BrandSideBySide from "../atoms/brand/side-by-side";
-import UserMenu from "./user-menu";
+import UserMenu from "@/components/organisms/user-menu";
+import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
 
 type Menu = {
   icon: IconKey;
@@ -87,7 +84,10 @@ function TopMenu({}: {}) {
         />
       </div>
 
-      <UserMenu />
+      <div className="flex justify-center align-middle items-center gap-2">
+        <ThemeModeToggle />
+        <UserMenu />
+      </div>
     </Container>
   );
 }
