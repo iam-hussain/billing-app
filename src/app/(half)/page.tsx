@@ -1,5 +1,5 @@
 import LoginForm from "@/components/forms/login-form";
-import { Button } from "@/components/patterns/button";
+import { Button } from "@/components/atoms/button";
 
 export default function Home() {
   return (

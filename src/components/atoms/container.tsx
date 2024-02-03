@@ -8,14 +8,23 @@ const containerVariants = cva("", {
   variants: {
     variant: {
       default: "",
-      screen_flex_row: "flex min-h-fill w-full h-full",
-      sidebar: "",
+      screen: "flex min-h-fill w-full h-full",
     },
     size: {
+      sidebar: "w-[240px] h-full",
+      sidebar_min: "w-[35px] h-full",
       default: "",
     },
     align: {
-      default: "w-[",
+      default: "",
+    },
+    display: {
+      default: "",
+      flex_col: "flex justify-center flex-col align-middle items-center",
+      flex_row: "flex justify-center align-middle items-center",
+      flex_row_between: "flex justify-between align-middle items-center",
+      grid: "",
+      hidden: "hidden",
     },
   },
   defaultVariants: {
@@ -32,11 +41,11 @@ export interface ContainerProps
 }
 
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, display, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "div";
     return (
       <Comp
-        className={cn(containerVariants({ variant, size, className }))}
+        className={cn(containerVariants({ variant, size, className, display }))}
         ref={ref}
         {...props}
       />

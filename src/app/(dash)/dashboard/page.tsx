@@ -1,4 +1,4 @@
-import { Container } from "@/components/patterns/container";
+import { Container } from "@/components/atoms/container";
 
 export default async function Dashboard() {
   return (

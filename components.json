@@ -11,7 +11,7 @@
   },
   "aliases": {
     "components": "@/components",
-    "ui": "@/components/patterns",
+    "ui": "@/components/atoms",
     "utils": "@/lib/utils"
   }
 }

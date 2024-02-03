@@ -1,12 +1,8 @@
 import Link from "next/link";
-import { ThemeModeToggle } from "@/components/compositions/theme-mode-toggle";
-import BrandStackSlogan from "@/components/brand/stack-with-slogan";
+import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
+import BrandStackSlogan from "@/components/atoms/brand/stack-with-slogan";
 
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Half({ children }: { children: React.ReactNode }) {
   return (
     <main className="min-h-fill flex flex-col py-10 px-4 gap-10 justify-center align-middle items-center">
       <div className="p-2 w-auto absolute top-0 right-0">

@@ -2,7 +2,10 @@ import React from "react";
 import { BiRestaurant } from "react-icons/bi";
 import { IoRestaurantOutline } from "react-icons/io5";
 import { FiPrinter } from "react-icons/fi";
+import { MdDashboard } from "react-icons/md";
+import { BsPrinterFill } from "react-icons/bs";
 import { FaKitchenSet } from "react-icons/fa6";
+import { SiAirtable } from "react-icons/si";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbDeviceIpadMinus } from "react-icons/tb";
 import { RiAccountPinCircleFill } from "react-icons/ri";
@@ -11,12 +14,18 @@ import { MdEventAvailable } from "react-icons/md";
 import { IoFastFoodSharp } from "react-icons/io5";
 import { FaTags } from "react-icons/fa6";
 import { IoLogOut } from "react-icons/io5";
+import { GiCookingPot } from "react-icons/gi";
+import { HiMenu } from "react-icons/hi";
+import { HiMenuAlt1 } from "react-icons/hi";
+import { HiMenuAlt2 } from "react-icons/hi";
+import { FaStore } from "react-icons/fa6";
 
 const icons = {
   BiRestaurant,
   IoRestaurantOutline,
   FiPrinter,
   FaKitchenSet,
+  FaStore,
   TbDeviceIpadMinus,
   FaCartShopping,
   RiAccountPinCircleFill,
@@ -25,18 +34,26 @@ const icons = {
   IoFastFoodSharp,
   FaTags,
   IoLogOut,
+  MdDashboard,
+  SiAirtable,
+  BsPrinterFill,
+  GiCookingPot,
+  HiMenu,
+  HiMenuAlt1,
+  HiMenuAlt2,
 };
 
 export type IconKey = keyof typeof icons;
 
-type IconProps = {
-  className?: string;
-  name: keyof typeof icons;
+export interface IconProps extends React.SVGAttributes<SVGAElement> {
+  name: IconKey;
+}
+
+const Icon = ({ name, ...props }: IconProps) => {
+  const IconComp = icons[name];
+  return <IconComp {...props} />;
 };
 
-function Icon(props: IconProps) {
-  const IconComp = icons[props.name];
-  return <IconComp />;
-}
+Icon.displayName = "Icon";
 
 export default Icon;

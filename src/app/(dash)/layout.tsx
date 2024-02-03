@@ -1,16 +1,12 @@
-import { Container } from "@/components/patterns/container";
-import BrandStack from "@/components/brand/stack";
-import { Separator } from "@/components/patterns/separator";
-import UserBadge from "@/components/compositions/user-badge";
-import SideMenu from "@/components/compositions/side-menu";
+import { Container } from "@/components/atoms/container";
+import BrandStack from "@/components/atoms/brand/stack";
+import { Separator } from "@/components/atoms/separator";
+import UserBadge from "@/components/molecules/user-badge";
+import SideMenu from "@/components/organisms/side-menu";
 
-export default function SlugLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Dash({ children }: { children: React.ReactNode }) {
   return (
-    <Container variant={"screen_flex_row"}>
+    <Container variant={"screen"}>
       <Container className=" w-2/12 flex justify-center flex-col align-middle items-center py-8 px-4 border-r-2 border-secondary">
         <SideMenu />
 

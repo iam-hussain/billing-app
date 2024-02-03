@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/patterns/button";
+import { Button } from "@/components/atoms/button";
 import cookies from "js-cookie";
 import {
   Form,
@@ -11,8 +11,8 @@ import {
   FormItem,
   FormMessage,
   FormLabel,
-} from "@/components/patterns/form";
-import { Input } from "@/components/patterns/input";
+} from "@/components/atoms/form";
+import { Input } from "@/components/atoms/input";
 import schemas, { LoginSchemaValues } from "@/validations";
 import { useRouter } from "next/navigation";
 
