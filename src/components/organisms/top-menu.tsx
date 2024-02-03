@@ -1,62 +1,20 @@
 "use client";
 
+import clsx from "clsx";
 import { Container } from "@/components/atoms/container";
 import Icon, { IconKey } from "@/components/atoms/icon";
 import { Button } from "@/components/atoms/button";
-import clsx from "clsx";
 import { useActionStore } from "@/stores/actionSlice";
 import BrandSideBySide from "../atoms/brand/side-by-side";
 import UserMenu from "@/components/organisms/user-menu";
 import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
+import FullScreenButton from "../molecules/full-screen-button";
 
-type Menu = {
-  icon: IconKey;
-  label: string;
-};
-
-const AppMenus: Menu[] = [
-  {
-    icon: "MdDashboard",
-    label: "Dashboard",
-  },
-  {
-    icon: "BsPrinterFill",
-    label: "Billing / Orders",
-  },
-  {
-    icon: "SiAirtable",
-    label: "Table Orders",
-  },
-  {
-    icon: "MdSoupKitchen",
-    label: "Kitchen Display",
-  },
-  {
-    icon: "FaCartShopping",
-    label: "Customer Display",
-  },
-];
-
-const SettingMenus: Menu[] = [
-  {
-    icon: "RiAccountPinCircleFill",
-    label: "Account",
-  },
-  {
-    icon: "MdEventAvailable",
-    label: "Availability",
-  },
-  {
-    icon: "IoFastFoodSharp",
-    label: "Products",
-  },
-  {
-    icon: "FaTags",
-    label: "Tags",
-  },
-];
-
-function TopMenu({}: {}) {
+function TopMenu({
+  onFullScreenClick,
+}: {
+  onFullScreenClick: () => Promise<void>;
+}) {
   const minimize = useActionStore((state) => state.isSideBarOpen);
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
@@ -85,6 +43,7 @@ function TopMenu({}: {}) {
       </div>
 
       <div className="flex justify-center align-middle items-center gap-2">
+        <FullScreenButton onClick={onFullScreenClick} />
         <ThemeModeToggle />
         <UserMenu />
       </div>
