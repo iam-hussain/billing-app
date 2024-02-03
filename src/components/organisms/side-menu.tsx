@@ -65,7 +65,7 @@ function SideMenu({}: {}) {
       className={clsx(
         "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] bg-white",
         {
-          "absolute md:fixed md:left-0 -left-[52px] md:w-[52px] pt-4 w-auto":
+          "absolute md:fixed md:left-0 -left-[52px] md:w-[52px] w-auto":
             minimize,
           "absolute md:fixed w-[240px] px-4 left-0": !minimize,
         }
@@ -74,8 +74,8 @@ function SideMenu({}: {}) {
     >
       <Button
         variant={"ghost"}
-        className={clsx("md:flex font-normal hidden", {
-          "absolute top-3 right-4": !minimize,
+        className={clsx("md:flex font-normal hidden m-auto mr-0 mt-2", {
+          // "absolute top-3 right-4": !minimize,
         })}
         onClick={() => setMinimize()}
       >
@@ -85,7 +85,7 @@ function SideMenu({}: {}) {
         />
       </Button>
       <Container
-        className={clsx("text-center md:mt-14 mt-5", {
+        className={clsx("text-center mt-5", {
           hidden: minimize,
         })}
       >
