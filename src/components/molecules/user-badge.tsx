@@ -1,7 +1,5 @@
 import React from "react";
-import { Button } from "@/components/atoms/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/avatar";
-import clsx from "clsx";
 
 function UserBadge({ name, image }: { name: string; image: string }) {
   return (

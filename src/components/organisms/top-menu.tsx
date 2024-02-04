@@ -10,11 +10,7 @@ import UserMenu from "@/components/organisms/user-menu";
 import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
 import FullScreenButton from "../molecules/full-screen-button";
 
-function TopMenu({
-  onFullScreenClick,
-}: {
-  onFullScreenClick: () => Promise<void>;
-}) {
+function TopMenu({}: {}) {
   const minimize = useActionStore((state) => state.isSideBarOpen);
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
@@ -43,7 +39,6 @@ function TopMenu({
       </div>
 
       <div className="flex justify-center align-middle items-center gap-2">
-        <FullScreenButton onClick={onFullScreenClick} />
         <ThemeModeToggle />
         <UserMenu />
       </div>

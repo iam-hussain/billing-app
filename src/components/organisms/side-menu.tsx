@@ -63,11 +63,11 @@ function SideMenu({}: {}) {
   return (
     <Container
       className={clsx(
-        "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] bg-background",
+        "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] md:top-0 z-50 bg-background",
         {
-          "absolute md:fixed md:left-0 -left-[54px] md:w-[52px] w-auto":
+          "absolute md:relative md:left-0 -left-[54px] md:w-[52px] w-auto":
             minimize,
-          "absolute md:fixed w-[240px] px-4 left-0": !minimize,
+          "absolute md:relative w-[240px] px-4 left-0": !minimize,
         }
       )}
       display={"flex_col"}
