@@ -65,16 +65,18 @@ function SideMenu({ className }: { className?: string }) {
 
   return (
     <>
-      <div
-        onClick={() => setMinimize()}
-        className={clsx(
-          "bg-bw-foreground h-full w-full md:hidden flex absolute top-0 bottom-0 left-0 right-0 z-30 opacity-30",
-          {
-            "-left-[100vw] -z-50": minimize,
-            "left-0 right-0": !minimize,
-          }
-        )}
-      />
+      {minimize && (
+        <div
+          onClick={() => setMinimize()}
+          className={clsx(
+            "bg-bw-foreground h-full w-full md:hidden flex absolute z-30 opacity-30 top-0 bottom-0",
+            {
+              "-left-[100vw] -z-50": minimize,
+              "left-0 right-0": !minimize,
+            }
+          )}
+        />
+      )}
       <Container
         className={clsx(
           "border-r-4 border-paper h-full pb-8 relative md:w-full bg-background md:max-w-52 w-4/6 p-2",
