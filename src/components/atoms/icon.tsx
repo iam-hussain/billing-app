@@ -21,6 +21,8 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { FaStore } from "react-icons/fa6";
 import { MdFullscreen } from "react-icons/md";
 import { MdFullscreenExit } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
+import { MdTableRestaurant } from "react-icons/md";
 
 const icons = {
   BiRestaurant,
@@ -45,6 +47,8 @@ const icons = {
   HiMenuAlt2,
   MdFullscreen,
   MdFullscreenExit,
+  IoClose,
+  MdTableRestaurant,
 };
 
 export type IconKey = keyof typeof icons;

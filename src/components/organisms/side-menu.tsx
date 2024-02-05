@@ -8,10 +8,12 @@ import { ScrollArea } from "@/components/atoms/scroll-area";
 import { Button } from "@/components/atoms/button";
 import clsx from "clsx";
 import { useActionStore } from "@/stores/actionSlice";
+import UserBadge from "../molecules/user-badge";
 
 type Menu = {
   icon: IconKey;
   label: string;
+  active?: Boolean;
 };
 
 const AppMenus: Menu[] = [
@@ -22,6 +24,7 @@ const AppMenus: Menu[] = [
   {
     icon: "BsPrinterFill",
     label: "Billing / Orders",
+    active: true,
   },
   {
     icon: "SiAirtable",
@@ -63,7 +66,7 @@ function SideMenu({ className }: { className?: string }) {
   return (
     <Container
       className={clsx(
-        "border-r-2 border-secondary h-full pb-8 relative w-full bg-background",
+        "border-r-4 border-paper h-full pb-8 relative w-full bg-background max-w-52 p-2",
         className
         // className,
         // {
@@ -75,19 +78,22 @@ function SideMenu({ className }: { className?: string }) {
       display={"flex_col"}
     >
       <Button
-        variant={"ghost"}
+        variant={"transparent"}
         className={clsx("md:flex font-normal hidden m-auto mr-0 mt-2", {
           // "absolute top-3 right-4": !minimize,
+
+          "text-inactive-foreground": minimize,
+          "text-primary": !minimize,
         })}
         onClick={() => setMinimize()}
       >
         <Icon
-          name={minimize ? "HiMenuAlt2" : "HiMenuAlt1"}
+          name={minimize ? "HiMenuAlt2" : "IoClose"}
           className={"h-5 w-5"}
         />
       </Button>
       <Container
-        className={clsx("text-center mt-5", {
+        className={clsx("text-center mt-2", {
           hidden: minimize,
         })}
       >
@@ -97,11 +103,7 @@ function SideMenu({ className }: { className?: string }) {
         </p>
       </Container>
 
-      <Separator
-        className={clsx("my-4", {
-          // "mb-28": minimize,
-        })}
-      />
+      <Separator className={clsx("my-4")} />
       <ScrollArea className="grow w-full flex justify-end">
         <Container className="flex flex-col gap-2 text-right">
           <p
@@ -129,6 +131,22 @@ function SideMenu({ className }: { className?: string }) {
           ))}
         </Container>
       </ScrollArea>
+      <Container className="flex flex-col gap-2 text-right w-full">
+        <UserBadge
+          name="Zakir Hussain"
+          image=""
+          minimize={minimize}
+          className={clsx("py-2", {
+            "px-4": !minimize,
+          })}
+        />
+        <MenuItem
+          minimize={minimize}
+          active={false}
+          label="Logout"
+          icon="IoLogOut"
+        />
+      </Container>
     </Container>
   );
 }

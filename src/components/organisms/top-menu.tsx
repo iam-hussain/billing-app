@@ -17,7 +17,7 @@ function TopMenu({ className }: { className?: string }) {
   return (
     <Container
       className={clsx(
-        "border-b-2 border-secondary w-full h-full pr-6",
+        "border-b-4 border-paper w-full h-full pr-6 min-h-[54px]",
         className
       )}
       display={"flex_row_between"}
@@ -25,12 +25,15 @@ function TopMenu({ className }: { className?: string }) {
       <div className="flex justify-center align-middle items-center">
         <Button
           variant={"transparent"}
-          className={clsx("flex font-normal md:hidden", {})}
+          className={clsx("flex font-normal md:hidden", {
+            "text-inactive-foreground": minimize,
+            "text-primary": !minimize,
+          })}
           onClick={() => setMinimize()}
         >
           <Icon
-            name={minimize ? "HiMenuAlt2" : "HiMenuAlt1"}
-            className={"h-5 w-5"}
+            name={minimize ? "HiMenuAlt2" : "IoClose"}
+            className={clsx("h-5 w-5")}
           />
         </Button>
         <BrandSideBySide
@@ -43,7 +46,11 @@ function TopMenu({ className }: { className?: string }) {
 
       <div className="flex justify-center align-middle items-center gap-2">
         <ThemeModeToggle />
-        <UserMenu />
+        {/* <UserMenu /> */}
+        <Button className="flex gap-2" variant={"secondary"}>
+          <Icon name="MdTableRestaurant" className="h-4 w-4" />
+          Select Table
+        </Button>
       </div>
     </Container>
   );
