@@ -64,90 +64,110 @@ function SideMenu({ className }: { className?: string }) {
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
   return (
-    <Container
-      className={clsx(
-        "border-r-4 border-paper h-full pb-8 relative w-full bg-background max-w-52 p-2",
-        className
-        // className,
-        // {
-        //   "absolute md:relative md:left-0 -left-[54px] md:w-[52px] w-auto":
-        //     minimize,
-        //   "absolute md:relative w-[240px] px-4 left-0": !minimize,
-        // }
-      )}
-      display={"flex_col"}
-    >
-      <Button
-        variant={"transparent"}
-        className={clsx("md:flex font-normal hidden m-auto mr-0 mt-2", {
-          // "absolute top-3 right-4": !minimize,
-
-          "text-inactive-foreground": minimize,
-          "text-primary": !minimize,
-        })}
+    <>
+      <div
         onClick={() => setMinimize()}
-      >
-        <Icon
-          name={minimize ? "HiMenuAlt2" : "IoClose"}
-          className={"h-5 w-5"}
-        />
-      </Button>
+        className={clsx(
+          "bg-bw-foreground h-full w-full md:hidden flex absolute top-0 bottom-0 left-0 right-0 z-30 opacity-30",
+          {
+            "-left-full": minimize,
+            "left-0 right-0": !minimize,
+          }
+        )}
+      />
       <Container
-        className={clsx("text-center mt-2", {
-          hidden: minimize,
-        })}
+        className={clsx(
+          "border-r-4 border-paper h-full pb-8 relative md:w-full bg-background md:max-w-52 w-4/6 p-2",
+          className,
+          {
+            "md:left-auto left-0 top-0 md:top-auto": !minimize,
+          }
+        )}
+        display={"flex_col"}
       >
-        <p className="text-md font-semibold pb-1">TastyTidbits Tavern</p>
-        <p className="text-xs text-slate-600">
-          1234 NW Bobcat Lane, St. Robert, MO 65584-5678
-        </p>
-      </Container>
+        <Button
+          variant={"transparent"}
+          className={clsx("md:flex font-normal hidden m-auto mr-0 mt-2", {
+            // "absolute top-3 right-4": !minimize,
 
-      <Separator className={clsx("my-4")} />
-      <ScrollArea className="grow w-full flex justify-end">
-        <Container className="flex flex-col gap-2 text-right">
-          <p
-            className={clsx("text-base font-semibold px-4 py-2", {
-              hidden: minimize,
-            })}
-          >
-            Applications
-          </p>
-          {AppMenus.map((each, key) => (
-            <MenuItem minimize={minimize} active={false} {...each} key={key} />
-          ))}
-        </Container>
-        <Separator className="my-4" />
-        <Container className="flex flex-col gap-2 text-right">
-          <p
-            className={clsx("text-base font-semibold px-4 py-2", {
-              hidden: minimize,
-            })}
-          >
-            Settings
-          </p>
-          {SettingMenus.map((each, key) => (
-            <MenuItem minimize={minimize} active={false} {...each} key={key} />
-          ))}
-        </Container>
-      </ScrollArea>
-      <Container className="flex flex-col gap-2 text-right w-full">
-        <UserBadge
-          name="Zakir Hussain"
-          image=""
-          minimize={minimize}
-          className={clsx("py-2", {
-            "px-4": !minimize,
+            "text-inactive-foreground": minimize,
+            "text-primary": !minimize,
           })}
-        />
-        <MenuItem
-          minimize={minimize}
-          active={false}
-          label="Logout"
-          icon="IoLogOut"
-        />
+          onClick={() => setMinimize()}
+        >
+          <Icon
+            name={minimize ? "HiMenuAlt2" : "IoClose"}
+            className={"h-5 w-5"}
+          />
+        </Button>
+        <Container
+          className={clsx("text-center mt-2", {
+            hidden: minimize,
+          })}
+        >
+          <p className="text-md font-semibold pb-1">TastyTidbits Tavern</p>
+          <p className="text-xs text-slate-600">
+            1234 NW Bobcat Lane, St. Robert, MO 65584-5678
+          </p>
+        </Container>
+
+        <Separator className={clsx("my-4")} />
+        <ScrollArea className="grow w-full flex justify-end">
+          <Container className="flex flex-col gap-2 text-right my-4">
+            <p
+              className={clsx("text-base font-semibold px-4", {
+                hidden: minimize,
+              })}
+            >
+              Applications
+            </p>
+            {AppMenus.map((each, key) => (
+              <MenuItem
+                minimize={minimize}
+                active={false}
+                {...each}
+                key={key}
+              />
+            ))}
+          </Container>
+          <Separator className="my-4" />
+          <Container className="flex flex-col gap-2 text-right">
+            <p
+              className={clsx("text-base font-semibold px-4 py-2", {
+                hidden: minimize,
+              })}
+            >
+              Settings
+            </p>
+            {SettingMenus.map((each, key) => (
+              <MenuItem
+                minimize={minimize}
+                active={false}
+                {...each}
+                key={key}
+              />
+            ))}
+          </Container>
+        </ScrollArea>
+        <Separator className={clsx("my-4")} />
+        <Container className="flex flex-col gap-2 text-right w-full">
+          <UserBadge
+            name="Zakir Hussain"
+            image=""
+            minimize={minimize}
+            className={clsx("py-2", {
+              "px-4": !minimize,
+            })}
+          />
+          <MenuItem
+            minimize={minimize}
+            active={false}
+            label="Logout"
+            icon="IoLogOut"
+          />
+        </Container>
       </Container>
-    </Container>
+    </>
   );
 }
 

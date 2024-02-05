@@ -34,6 +34,7 @@ const categoryList = [
   {
     name: "Briyani",
     image: "",
+    active: true,
   },
   {
     name: "Indian Breads",
@@ -94,10 +95,10 @@ export function CategoriesSlide() {
   return (
     //== <Container className="w-full h-auto ">
     <ScrollArea className="w-full whitespace-nowrap rounded-md bg-bw text-bg-foreground">
-      <Container className="flex w-max space-x-4 p-4">
+      <Container className="flex w-max space-x-2 p-3">
         {categoryList.map((category, index) => (
           <div key={index} className="shrink-0">
-            <CategoryCard name={category.name} image={category.image} />
+            <CategoryCard {...category} />
           </div>
         ))}
       </Container>
