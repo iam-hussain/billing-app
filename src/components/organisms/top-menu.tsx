@@ -10,13 +10,16 @@ import UserMenu from "@/components/organisms/user-menu";
 import { ThemeModeToggle } from "@/components/organisms/theme-mode-toggle";
 import FullScreenButton from "../molecules/full-screen-button";
 
-function TopMenu({}: {}) {
+function TopMenu({ className }: { className?: string }) {
   const minimize = useActionStore((state) => state.isSideBarOpen);
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
   return (
     <Container
-      className={"border-b-2 border-secondary w-full pr-6 h-[52px]"}
+      className={clsx(
+        "border-b-2 border-secondary w-full h-full pr-6",
+        className
+      )}
       display={"flex_row_between"}
     >
       <div className="flex justify-center align-middle items-center">

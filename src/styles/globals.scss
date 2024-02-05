@@ -12,9 +12,11 @@
     --popover-foreground: 224 71.4% 4.1%;
     --primary: 100 36% 48%;
     --primary-foreground: 355.7 100% 97.3%;
-    --bw: 220.9 39.3% 11%;
-    --bw-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
+    --bw: 0 0% 100%;
+    --bw-foreground: 0 0% 0%;
+    --paper: 220 14.3% 95.9%;
+    --paper-foreground: 220.9 39.3% 11%;
+    --secondary: 209, 61%, 65%;
     --secondary-foreground: 220.9 39.3% 11%;
     --info: 221.2 83.2% 53.3%;
     --info-foreground: 210 40% 98%;
@@ -39,10 +41,12 @@
     --popover-foreground: 210 20% 98%;
     --primary: 100 36% 48%;
     --primary-foreground: 0 0% 100%;
-    --bw: 210 20% 98%;
-    --bw-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
+    --bw: 0 0% 0%;
+    --bw-foreground: 0 0% 100%;
+    --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 210 20% 98%;
+    --paper: 215 27.9% 16.9%;
+    --paper-foreground: 210 20% 98%;
     --info: 217.2 91.2% 59.8%;
     --info-foreground: 222.2 47.4% 11.2%;
     --muted: 215 27.9% 16.9%;
@@ -98,4 +102,13 @@ body {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+}
+
+.scroll-bar > div {
+  width: 100% !important;
+}
+
+.grid-first-auto {
+  grid-template-rows: auto repeat(11, minmax(0, 1fr));
+  grid-template-columns: auto repeat(11, minmax(0, 1fr));
 }

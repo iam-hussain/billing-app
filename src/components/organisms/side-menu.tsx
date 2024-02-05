@@ -56,19 +56,21 @@ const SettingMenus: Menu[] = [
   },
 ];
 
-function SideMenu({}: {}) {
+function SideMenu({ className }: { className?: string }) {
   const minimize = useActionStore((state) => state.isSideBarOpen);
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
   return (
     <Container
       className={clsx(
-        "border-r-2 border-secondary h-full pb-8 relative overflow-hidden top-[52px] md:top-0 z-50 bg-background",
-        {
-          "absolute md:relative md:left-0 -left-[54px] md:w-[52px] w-auto":
-            minimize,
-          "absolute md:relative w-[240px] px-4 left-0": !minimize,
-        }
+        "border-r-2 border-secondary h-full pb-8 relative w-full bg-background",
+        className
+        // className,
+        // {
+        //   "absolute md:relative md:left-0 -left-[54px] md:w-[52px] w-auto":
+        //     minimize,
+        //   "absolute md:relative w-[240px] px-4 left-0": !minimize,
+        // }
       )}
       display={"flex_col"}
     >

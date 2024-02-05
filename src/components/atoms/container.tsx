@@ -8,7 +8,7 @@ const containerVariants = cva("", {
   variants: {
     variant: {
       default: "",
-      screen: "flex min-h-fill w-full h-full",
+      screen: "min-h-fill w-full h-full",
     },
     size: {
       sidebar: "w-[240px] h-full",

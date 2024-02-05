@@ -13,10 +13,10 @@ function CategoryCard({
   onlyText?: Boolean;
 }) {
   return (
-    <div className="p-2 flex bg-secondary text-secondary-foreground rounded-lg h-full w-full justify-start align-middle items-center gap-2 select-none">
+    <div className="p-2 flex bg-bw rounded-lg h-full w-full justify-start align-middle items-center gap-2 select-none">
       {!onlyText && (
         <>
-          <Avatar className="cursor-pointer select-none bg-secondary rounded-lg">
+          <Avatar className="cursor-pointer select-none rounded-lg">
             <AspectRatio ratio={1 / 1} className="h-full">
               {image ? (
                 <Image

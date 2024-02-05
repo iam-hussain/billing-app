@@ -39,6 +39,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--bw))",
           foreground: "hsl(var(--bw-foreground))",
         },
+        paper: {
+          DEFAULT: "hsl(var(--paper))",
+          foreground: "hsl(var(--paper-foreground))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
