@@ -60,7 +60,7 @@ const SettingMenus: Menu[] = [
 ];
 
 function SideMenu({ className }: { className?: string }) {
-  const minimize = useActionStore((state) => state.isSideBarOpen);
+  const minimize = useActionStore((state) => !state.isSideBarOpen);
   const setMinimize = useActionStore((state) => state.setSideBarOpen);
 
   return (

@@ -23,6 +23,8 @@ import { MdFullscreen } from "react-icons/md";
 import { MdFullscreenExit } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { MdTableRestaurant } from "react-icons/md";
+import { FiSearch } from "react-icons/fi";
+import { GrPowerReset } from "react-icons/gr";
 
 const icons = {
   BiRestaurant,
@@ -49,6 +51,8 @@ const icons = {
   MdFullscreenExit,
   IoClose,
   MdTableRestaurant,
+  FiSearch,
+  GrPowerReset,
 };
 
 export type IconKey = keyof typeof icons;
