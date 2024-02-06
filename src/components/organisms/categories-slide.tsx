@@ -3,6 +3,7 @@ import * as React from "react";
 import CategoryCard from "@/components/molecules/category-card";
 import { Container } from "@/components/atoms/container";
 import { ScrollArea, ScrollBar } from "@/components/atoms/scroll-area";
+import clsx from "clsx";
 
 const categoryList = [
   {
@@ -80,10 +81,15 @@ const categoryList = [
   },
 ];
 
-export function CategoriesSlide() {
+export function CategoriesSlide({ className }: { className?: string }) {
   return (
-    <ScrollArea className="w-full whitespace-nowrap rounded-md bg-bw text-bg-foreground">
-      <Container className="flex w-max space-x-2 p-3">
+    <ScrollArea
+      className={clsx(
+        "w-full h-auto whitespace-nowrap rounded-md bg-bw text-bg-foreground",
+        className
+      )}
+    >
+      <Container className="flex w-max space-x-2 p-2 py-3">
         {categoryList.map((product, index) => (
           <div key={index} className="shrink-0">
             <CategoryCard {...product} />

@@ -2,11 +2,12 @@ import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/atoms/scroll-area";
 import ProductCard from "@/components/molecules/product-card";
 import { Container } from "@/components/atoms/container";
+import clsx from "clsx";
 
 const products = [
   {
     name: "Ghee Rava Dosa",
-    deck: "Neque porro quisquam est qui velit...",
+    deck: "Neque porro quisquam est velit...",
     image:
       "https://images.unsplash.com/photo-1612204104655-6c8a57ae235f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGZvb2RzfGVufDB8fDB8fHww",
   },
@@ -56,9 +57,9 @@ const products = [
   },
 ];
 
-function ProductList() {
+function ProductList({ className }: { className?: string }) {
   return (
-    <ScrollArea className="w-full h-full bg-paper py-4">
+    <ScrollArea className={clsx("w-full h-full bg-paper", className)}>
       <Container className="grid md:grid-cols-4 grid-cols-2 gap-4">
         {products.map((product, index) => (
           <div key={index} className="shrink-0">

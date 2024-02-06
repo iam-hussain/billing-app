@@ -1,5 +1,7 @@
 import React from "react";
 import clsx from "clsx";
+import Image from "next/image";
+import { AspectRatio } from "@/components/atoms/aspect-ratio";
 
 function ProductCard({
   id,
@@ -19,12 +21,25 @@ function ProductCard({
   return (
     <div
       className={clsx(
-        "flex flex-col h-full w-full justify-center align-middle items-center border rounded-lg px-2 py-4 bg-bw cursor-pointer text-center hover:bg-secondary/20",
-        {}
+        "flex flex-col h-full w-full align-middle items-center border rounded-lg px-2 py-4 bg-bw cursor-pointer text-center hover:bg-secondary/20",
+        {
+          "justify-center": !image,
+          "justify-start": image,
+        }
       )}
     >
-      <h5 className="text-md font-semibold">{name || ""}</h5>
-      <p className="text-sm">{deck || ""}</p>
+      {image && (
+        <AspectRatio ratio={4 / 3} className="h-full">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="rounded-md object-cover"
+          />
+        </AspectRatio>
+      )}
+      <h5 className="text-base font-semibold">{name || ""}</h5>
+      <p className="text-sm text-one-line">{deck || ""}</p>
       <p className="text-sm">{price || "20 ₹"}</p>
     </div>
   );
