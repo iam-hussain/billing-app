@@ -83,13 +83,13 @@ const categoryList = [
 
 export function CategoriesSlide({ className }: { className?: string }) {
   return (
+    // <div
+    //   className={clsx("w-full h-auto whitespace-nowrap rounded-md", className)}
+    // >
     <ScrollArea
-      className={clsx(
-        "w-full h-auto whitespace-nowrap rounded-md bg-bw text-bg-foreground",
-        className
-      )}
+      className={clsx("w-full h-auto whitespace-nowrap rounded-md", className)}
     >
-      <Container className="flex w-max space-x-2 p-2 py-3">
+      <Container className="flex w-max space-x-2 px-2 py-3 bg-bw text-bg-foreground">
         {categoryList.map((product, index) => (
           <div key={index} className="shrink-0">
             <CategoryCard {...product} />
@@ -98,5 +98,6 @@ export function CategoriesSlide({ className }: { className?: string }) {
       </Container>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
+    // </div>
   );
 }
