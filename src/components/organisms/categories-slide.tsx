@@ -87,7 +87,7 @@ export function CategoriesSlide({ className }: { className?: string }) {
     //   className={clsx("w-full h-auto whitespace-nowrap rounded-md", className)}
     // >
     <ScrollArea
-      className={clsx("w-full h-auto whitespace-nowrap rounded-md", className)}
+      className={clsx("w-auto h-auto whitespace-nowrap rounded-md", className)}
     >
       <Container className="flex w-max space-x-2 px-2 py-3 bg-bw text-bg-foreground">
         {categoryList.map((product, index) => (
