@@ -83,9 +83,6 @@ const categoryList = [
 
 export function CategoriesSlide({ className }: { className?: string }) {
   return (
-    // <div
-    //   className={clsx("w-full h-auto whitespace-nowrap rounded-md", className)}
-    // >
     <ScrollArea
       className={clsx("w-auto h-auto whitespace-nowrap rounded-md", className)}
     >
@@ -98,6 +95,5 @@ export function CategoriesSlide({ className }: { className?: string }) {
       </Container>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
-    // </div>
   );
 }

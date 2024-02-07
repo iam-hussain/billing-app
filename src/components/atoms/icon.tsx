@@ -29,6 +29,7 @@ import { TiUserAdd } from "react-icons/ti";
 import { FaListUl } from "react-icons/fa6";
 import { IoPersonAddSharp } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
+import { TiDelete } from "react-icons/ti";
 
 const icons = {
   BiRestaurant,
@@ -61,6 +62,7 @@ const icons = {
   FaListUl,
   IoPersonAddSharp,
   IoMdAdd,
+  TiDelete,
 };
 
 export type IconKey = keyof typeof icons;
