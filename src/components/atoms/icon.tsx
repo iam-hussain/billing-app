@@ -25,6 +25,10 @@ import { IoClose } from "react-icons/io5";
 import { MdTableRestaurant } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 import { GrPowerReset } from "react-icons/gr";
+import { TiUserAdd } from "react-icons/ti";
+import { FaListUl } from "react-icons/fa6";
+import { IoPersonAddSharp } from "react-icons/io5";
+import { IoMdAdd } from "react-icons/io";
 
 const icons = {
   BiRestaurant,
@@ -53,6 +57,10 @@ const icons = {
   MdTableRestaurant,
   FiSearch,
   GrPowerReset,
+  TiUserAdd,
+  FaListUl,
+  IoPersonAddSharp,
+  IoMdAdd,
 };
 
 export type IconKey = keyof typeof icons;
