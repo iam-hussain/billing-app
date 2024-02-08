@@ -21,7 +21,7 @@ function ProductCard({
   return (
     <div
       className={clsx(
-        "flex flex-col h-full w-full align-middle items-center rounded-lg p-2 bg-bw cursor-pointer text-center select-none hover:border-secondary/80 hover:bg-secondary/5 border-2",
+        "flex flex-col h-full w-full align-middle items-center rounded-lg p-2 bg-bw cursor-pointer text-center select-none hover:border-bw-foreground/40 border-2",
         {
           "justify-center": !image,
           "justify-start": image,
