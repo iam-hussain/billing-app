@@ -12,7 +12,7 @@ function SearchBar({ className }: { className?: string }) {
 
         <Icon
           name="FiSearch"
-          className="absolute top-0 bottom-0 right-3 m-auto select-none text-primary"
+          className="absolute -top-1 bottom-0 right-3 m-auto select-none text-primary"
         />
       </div>
       <Button variant={"outline"}>
