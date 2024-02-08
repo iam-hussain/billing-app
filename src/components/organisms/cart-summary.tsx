@@ -3,6 +3,7 @@ import Icon from "@/components/atoms/icon";
 import { Separator } from "@/components/atoms/separator";
 import { ScrollArea } from "@/components/atoms/scroll-area";
 import clsx from "clsx";
+import ButtonToolTip from "@/components/molecules/button-tooltip";
 
 const products = [
   {
@@ -147,15 +148,9 @@ const products = [
 
 function CartSummary({ className }: { className?: string }) {
   return (
-    <div className={clsx("w-full h-full cart-grid gap-4", className)}>
-      <div className="flex justify-between align-middle items-center py-2 px-4 border-y-2 border-paper">
-        <Button
-          className="flex justify-center align-middle gap-2"
-          variant={"outline"}
-        >
-          <Icon name="IoPersonAddSharp" className="h-4 w-4" />
-          Link Customer
-        </Button>
+    <div className={clsx("w-full h-full cart-grid gap-4 bg-paper", className)}>
+      <div className="flex justify-between align-middle items-center py-2 px-4 bg-background">
+        <p>Order ID: JJ782328</p>
         <div className="flex justify-center align-middle gap-2">
           <Button
             className="flex justify-center align-middle gap-2"
@@ -170,17 +165,48 @@ function CartSummary({ className }: { className?: string }) {
           >
             <Icon name="FaListUl" className="h-4 w-4" />
           </Button>
-
-          <Button
-            className="flex justify-center align-middle gap-2"
-            variant={"destructive"}
-          >
-            <Icon name="GrPowerReset" className="h-4 w-4" />
-          </Button>
         </div>
       </div>
+      <div className="flex justify-between align-middle items-center py-2 px-4 bg-background">
+        <div className="flex justify-center align-middle gap-2">
+          <ButtonToolTip
+            label="Select Table"
+            icon="MdTableRestaurant"
+            variant={"outline"}
+          />
+          <ButtonToolTip
+            label="Link Customer"
+            icon="IoPersonAddSharp"
+            variant={"outline"}
+          />
 
-      <ScrollArea className="w-full flex justify-end grow">
+          <ButtonToolTip
+            label="Add Discount"
+            icon="TbDiscount2"
+            variant={"outline"}
+          />
+
+          <ButtonToolTip
+            label="Add Package Charge"
+            icon="PiPackageFill"
+            variant={"outline"}
+          />
+
+          <ButtonToolTip
+            label="Add Delivery Charge"
+            icon="TbMotorbike"
+            variant={"outline"}
+          />
+        </div>
+
+        <ButtonToolTip
+          label="Reset Order"
+          icon="GrPowerReset"
+          variant={"destructive"}
+        />
+      </div>
+
+      <ScrollArea className="w-full flex justify-end grow bg-background">
         <div className="flex flex-col py-2 px-4">
           {products.map((each, i) => (
             <>
@@ -210,7 +236,7 @@ function CartSummary({ className }: { className?: string }) {
           ))}
         </div>
       </ScrollArea>
-      <div className="bg-paper/40 p-6 flex justify-center align-middle items-center gap-2 flex-col">
+      <div className="p-4 flex justify-center align-middle items-center gap-2 flex-col text-sm bg-background">
         <div className="flex gap-2 justify-between align-middle items-center w-full px-14">
           <span>Subtotal</span>
           <span>₹ 1030.00</span>
@@ -228,10 +254,15 @@ function CartSummary({ className }: { className?: string }) {
           <span>₹ 1300.00</span>
         </div>
         <div className="flex gap-4 justify-between align-middle items-center w-full px-10 pt-6">
+          <ButtonToolTip
+            label="Hold Order"
+            icon="MdPendingActions"
+            variant={"outline"}
+          />
           <Button variant={"outline"} className="w-full">
             Hold Order
           </Button>
-          <Button className="w-full">Place Order</Button>
+          <Button className="w-full">Express Order</Button>
         </div>
       </div>
     </div>

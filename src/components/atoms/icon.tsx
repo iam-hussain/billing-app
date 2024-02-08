@@ -31,6 +31,10 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
 import { TiDelete } from "react-icons/ti";
 import { RiSubtractFill } from "react-icons/ri";
+import { TbDiscount2 } from "react-icons/tb";
+import { PiPackageFill } from "react-icons/pi";
+import { TbMotorbike } from "react-icons/tb";
+import { MdPendingActions } from "react-icons/md";
 
 const icons = {
   BiRestaurant,
@@ -65,6 +69,10 @@ const icons = {
   IoMdAdd,
   TiDelete,
   RiSubtractFill,
+  TbDiscount2,
+  PiPackageFill,
+  TbMotorbike,
+  MdPendingActions,
 };
 
 export type IconKey = keyof typeof icons;
