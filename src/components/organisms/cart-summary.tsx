@@ -12,50 +12,11 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1612204104655-6c8a57ae235f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGZvb2RzfGVufDB8fDB8fHww",
   },
-  {
-    name: "Cheese Pizza",
-    price: 150.0,
-    image:
-      "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Peri Peri Chicken Burger",
-    price: 150.0,
-    image:
-      "https://images.unsplash.com/photo-1609167830220-7164aa360951?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Mutton Briyani",
-    price: 300.0,
-    image: "",
-    active: true,
-  },
-  {
-    name: "Idly",
-    price: 10.0,
-    image: "",
-  },
-  {
-    name: "Watermelon Juice",
-    price: 50.0,
-    image: "",
-  },
-  {
-    name: "Chocolate Moose",
-    price: 100.0,
-    image: "",
-  },
-  {
-    name: "Chicken Noodles",
-    price: 100.0,
-    image:
-      "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
 ];
 
 function CartSummary({ className }: { className?: string }) {
   return (
-    <div className={clsx("w-full h-full", className)}>
+    <div className={clsx("w-full h-full cart-grid gap-4", className)}>
       <div className="flex justify-between align-middle items-center py-2 px-4 border-y-2 border-paper">
         <Button
           className="flex justify-center align-middle gap-2"
@@ -88,13 +49,13 @@ function CartSummary({ className }: { className?: string }) {
         </div>
       </div>
 
-      <ScrollArea className="grow w-full flex justify-end">
+      <ScrollArea className="w-full flex justify-end grow">
         <div className="flex flex-col py-2 px-4">
           {products.map((each, i) => (
             <>
               <div
                 key={i}
-                className="flex justify-center items-center align-middle py-2 rounded-md text-base font-medium"
+                className="flex justify-center items-center align-middle gap-4 rounded-md text-sm font-medium"
               >
                 <span className="grow">{each.name}</span>
                 <div className="flex justify-center align-middle items-center text-center border border-paper">
@@ -106,18 +67,42 @@ function CartSummary({ className }: { className?: string }) {
                     <Icon name="IoMdAdd" />
                   </Button>
                 </div>
-                <span className="min-w-28 flex justify-end mr-8">
+                <span className="min-w-28 flex justify-end">
                   ₹ {each.price.toFixed(2)}
                 </span>
-                <Icon name="TiDelete" className="h-6 w-6" />
+                <Button variant={"transparent"} className="p-2">
+                  <Icon name="TiDelete" className="h-6 w-6" />
+                </Button>
               </div>
-              <Separator className={"my-1"} />
+              <Separator className={"my-2"} />
             </>
           ))}
         </div>
       </ScrollArea>
-      <div></div>
-      {/* <p>Hello</p> */}
+      <div className="bg-paper/40 p-6 flex justify-center align-middle items-center gap-2 flex-col">
+        <div className="flex gap-2 justify-between align-middle items-center w-full px-14">
+          <span>Subtotal</span>
+          <span>₹ 1030.00</span>
+        </div>
+        <div className="flex gap-2 justify-between align-middle items-center w-full px-14">
+          <span>Tax</span>
+          <span>₹ 199.00</span>
+        </div>
+        <div className="flex gap-2 justify-between align-middle items-center w-full px-14">
+          <span>Coupon</span>
+          <span>₹ 0.00</span>
+        </div>
+        <div className="flex gap-2 justify-between align-middle items-center w-full px-14">
+          <span>Grand Total</span>
+          <span>₹ 1300.00</span>
+        </div>
+        <div className="flex gap-4 justify-between align-middle items-center w-full px-10 pt-6">
+          <Button variant={"outline"} className="w-full">
+            Hold Order
+          </Button>
+          <Button className="w-full">Place Order</Button>
+        </div>
+      </div>
     </div>
   );
 }
