@@ -25,6 +25,9 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1609167830220-7164aa360951?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+];
+
+const preparing = [
   {
     name: "Mutton Briyani",
     price: 300.0,
@@ -153,6 +156,48 @@ function CartSummary({ className }: { className?: string }) {
             <>
               <div
                 key={i}
+                className="flex justify-center items-center align-middle gap-4 rounded-md text-sm font-medium text-inactive"
+              >
+                <span className="grow">{each.name}</span>
+                <div className="flex justify-center align-middle items-center text-center border border-paper">
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="RiSubtractFill" />
+                  </Button>
+                  <span className="min-w-6">1</span>
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="IoMdAdd" />
+                  </Button>
+                </div>
+                <span className="min-w-16 flex justify-end">
+                  ₹ {each.price.toFixed(2)}
+                </span>
+
+                <ButtonToolTip
+                  className="text-bw-foreground"
+                  label={i > 1 ? "Cooked" : "Cooking"}
+                  icon={i > 1 ? "PiCookingPot" : "PiCookingPotFill"}
+                  variant={"transparent"}
+                />
+              </div>
+              {products.length - 1 !== i && <Separator className={"my-2"} />}
+            </>
+          ))}
+
+          <div className="relative my-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Kitchen Pending
+              </span>
+            </div>
+          </div>
+
+          {preparing.map((each, i) => (
+            <>
+              <div
+                key={i}
                 className="flex justify-center items-center align-middle gap-4 rounded-md text-sm font-medium"
               >
                 <span className="grow">{each.name}</span>
@@ -165,14 +210,14 @@ function CartSummary({ className }: { className?: string }) {
                     <Icon name="IoMdAdd" />
                   </Button>
                 </div>
-                <span className="min-w-28 flex justify-end">
+                <span className="min-w-16 flex justify-end">
                   ₹ {each.price.toFixed(2)}
                 </span>
                 <Button variant={"transparent"} className="p-2">
                   <Icon name="TiDelete" className="h-6 w-6" />
                 </Button>
               </div>
-              {products.length - 1 !== i && <Separator className={"my-2"} />}
+              {preparing.length - 1 !== i && <Separator className={"my-2"} />}
             </>
           ))}
 
@@ -182,7 +227,7 @@ function CartSummary({ className }: { className?: string }) {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                New Items
+                Items Addons
               </span>
             </div>
           </div>
@@ -203,14 +248,16 @@ function CartSummary({ className }: { className?: string }) {
                     <Icon name="IoMdAdd" />
                   </Button>
                 </div>
-                <span className="min-w-28 flex justify-end">
+                <span className="min-w-16 flex justify-end">
                   ₹ {each.price.toFixed(2)}
                 </span>
                 <Button variant={"transparent"} className="p-2">
                   <Icon name="TiDelete" className="h-6 w-6" />
                 </Button>
               </div>
-              {products.length - 1 !== i && <Separator className={"my-2"} />}
+              {pendingProducts.length - 1 !== i && (
+                <Separator className={"my-2"} />
+              )}
             </>
           ))}
         </div>
@@ -232,7 +279,7 @@ function CartSummary({ className }: { className?: string }) {
           <span>Grand Total</span>
           <span>₹ 1300.00</span>
         </div>
-        <div className="flex gap-4 justify-between align-middle items-center w-full md:px-10 md:pt-6 pt-2">
+        <div className="flex gap-4 justify-between align-middle items-center w-full md:px-10 md:pt-4 pt-2">
           <ButtonToolTip
             label="Hold Order"
             icon="MdPendingActions"

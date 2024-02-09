@@ -35,6 +35,9 @@ import { TbDiscount2 } from "react-icons/tb";
 import { PiPackageFill } from "react-icons/pi";
 import { TbMotorbike } from "react-icons/tb";
 import { MdPendingActions } from "react-icons/md";
+import { FaBowlFood } from "react-icons/fa6";
+import { PiCookingPot } from "react-icons/pi";
+import { PiCookingPotFill } from "react-icons/pi";
 
 const icons = {
   BiRestaurant,
@@ -73,6 +76,9 @@ const icons = {
   PiPackageFill,
   TbMotorbike,
   MdPendingActions,
+  FaBowlFood,
+  PiCookingPot,
+  PiCookingPotFill,
 };
 
 export type IconKey = keyof typeof icons;
