@@ -38,6 +38,7 @@ import { MdPendingActions } from "react-icons/md";
 import { FaBowlFood } from "react-icons/fa6";
 import { PiCookingPot } from "react-icons/pi";
 import { PiCookingPotFill } from "react-icons/pi";
+import { MdOutlinePayments } from "react-icons/md";
 
 const icons = {
   BiRestaurant,
@@ -79,6 +80,7 @@ const icons = {
   FaBowlFood,
   PiCookingPot,
   PiCookingPotFill,
+  MdOutlinePayments,
 };
 
 export type IconKey = keyof typeof icons;

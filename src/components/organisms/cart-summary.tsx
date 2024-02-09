@@ -98,19 +98,12 @@ function CartSummary({ className }: { className?: string }) {
           {/* <p>Created: Today, 3:40 PM</p> */}
         </div>
         <div className="flex justify-center align-middle gap-2">
-          <Button
-            className="flex justify-center align-middle gap-2"
+          <ButtonToolTip label="New Order" icon="IoMdAdd" variant={"outline"} />
+          <ButtonToolTip
+            label="Order List"
+            icon="FaListUl"
             variant={"outline"}
-          >
-            <Icon name="IoMdAdd" className="h-4 w-4" />
-          </Button>
-
-          <Button
-            className="flex justify-center align-middle gap-2"
-            variant={"outline"}
-          >
-            <Icon name="FaListUl" className="h-4 w-4" />
-          </Button>
+          />
         </div>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-6 py-2 px-4 gap-2 bg-background">
@@ -125,7 +118,7 @@ function CartSummary({ className }: { className?: string }) {
           variant={"outline"}
         />
 
-        <ButtonToolTip
+        {/* <ButtonToolTip
           label="Add Discount"
           icon="TbDiscount2"
           variant={"outline"}
@@ -141,9 +134,10 @@ function CartSummary({ className }: { className?: string }) {
           label="Add Delivery Charge"
           icon="TbMotorbike"
           variant={"outline"}
-        />
+        /> */}
 
         <ButtonToolTip
+          className="md:col-start-6"
           label="Reset Order"
           icon="GrPowerReset"
           variant={"destructive"}
@@ -262,33 +256,65 @@ function CartSummary({ className }: { className?: string }) {
           ))}
         </div>
       </ScrollArea>
-      <div className="p-4 flex justify-center align-middle items-center gap-2 flex-col text-sm bg-background">
-        <div className="flex gap-2 justify-between align-middle items-center w-full md:px-14">
-          <span>Subtotal</span>
-          <span>₹ 1030.00</span>
+      <div className="p-4 flex justify-center align-middle items-center gap-4 flex-col text-sm bg-background select-none">
+        <div className="grid grid-cols-4 gap-2 w-full md:px-10">
+          <ButtonToolTip
+            label="Add Discount"
+            icon="TbDiscount2"
+            variant={"outline"}
+          />
+
+          <ButtonToolTip
+            label="Add Package Charge"
+            icon="PiPackageFill"
+            variant={"outline"}
+          />
+
+          <ButtonToolTip
+            label="Add Delivery Charge"
+            icon="TbMotorbike"
+            variant={"outline"}
+          />
+
+          <ButtonToolTip
+            label="Add Payment"
+            icon="MdOutlinePayments"
+            variant={"outline"}
+          />
         </div>
-        <div className="flex gap-2 justify-between align-middle items-center w-full md:px-14">
-          <span>Tax</span>
-          <span>₹ 199.00</span>
+        <div className="flex flex-col w-full gap-2">
+          <div className="flex gap-2 justify-between align-middle items-center w-full md:px-10">
+            <span>Subtotal</span>
+            <span>₹ 1030.00</span>
+          </div>
+          <div className="flex gap-2 justify-between align-middle items-center w-full md:px-10">
+            <span>Tax</span>
+            <span>₹ 199.00</span>
+          </div>
+          <div className="flex gap-2 justify-between align-middle items-center w-full md:px-10">
+            <span>Coupon</span>
+            <span>₹ 0.00</span>
+          </div>
+          <div className="flex gap-2 justify-between align-middle items-center w-full md:px-10">
+            <span>Grand Total</span>
+            <span>₹ 1300.00</span>
+          </div>
         </div>
-        <div className="flex gap-2 justify-between align-middle items-center w-full md:px-14">
-          <span>Coupon</span>
-          <span>₹ 0.00</span>
-        </div>
-        <div className="flex gap-2 justify-between align-middle items-center w-full md:px-14">
-          <span>Grand Total</span>
-          <span>₹ 1300.00</span>
-        </div>
-        <div className="flex gap-4 justify-between align-middle items-center w-full md:px-10 md:pt-4 pt-2">
+        <div className="grid grid-cols-4 gap-2 w-full md:px-10">
           <ButtonToolTip
             label="Hold Order"
             icon="MdPendingActions"
             variant={"outline"}
           />
           <Button variant={"outline"} className="w-full">
-            Hold Order
+            KOT
           </Button>
-          <Button className="w-full">Express Order</Button>
+          <Button variant={"outline"} className="w-full">
+            Print
+          </Button>
+          <Button variant={"outline"} className="w-full">
+            Express
+          </Button>
         </div>
       </div>
     </div>
