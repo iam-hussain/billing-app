@@ -20,6 +20,7 @@ function ProductCard({
 }) {
   return (
     <div
+      tabIndex={0}
       className={clsx(
         "flex flex-col h-full w-full align-middle items-center rounded-lg p-2 bg-bw cursor-pointer text-center select-none hover:border-bw-foreground/40 border-2",
         {
