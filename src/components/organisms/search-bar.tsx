@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "@/components/atoms/input";
 import { Button } from "@/components/atoms/button";
 import Icon from "@/components/atoms/icon";
+import ButtonToolTip from "@/components/molecules/button-tooltip";
 import clsx from "clsx";
 
 function SearchBar({ className }: { className?: string }) {
@@ -15,9 +16,11 @@ function SearchBar({ className }: { className?: string }) {
           className="absolute -top-1 bottom-0 right-3 m-auto select-none text-primary"
         />
       </div>
-      <Button variant={"outline"}>
-        <Icon name="GrPowerReset" />
-      </Button>
+      <ButtonToolTip
+        label="Search Reset"
+        icon="GrPowerReset"
+        variant={"outline"}
+      />
     </div>
   );
 }
