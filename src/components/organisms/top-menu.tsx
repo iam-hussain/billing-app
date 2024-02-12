@@ -44,6 +44,7 @@ function TopMenu({ className }: { className?: string }) {
               // "w-auto md:pl-6": minimize,
             })}
           />
+          <h1>QuickDine</h1>
           <SearchBar className="md:flex hidden min-w-96" />
         </div>
       </div>
