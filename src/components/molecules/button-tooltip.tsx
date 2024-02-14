@@ -21,7 +21,7 @@ function ButtonToolTip({ label, icon, ...buttonProps }: ButtonToolTip) {
         <TooltipTrigger asChild>
           <Button
             variant={"ghost"}
-            className={clsx("flex justify-center gap-2 font-normal", {})}
+            className={clsx("flex justify-center gap-2 font-normal text-lg")}
             {...buttonProps}
           >
             <Icon name={icon} className="h-5 w-5" />

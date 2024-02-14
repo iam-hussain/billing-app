@@ -174,7 +174,7 @@ body {
 
 .scroll-area__large {
   @include breakpoint(md) {
-    max-height: 60dvh;
-    min-height: 30dvh;
+    max-height: 50vh;
+    min-height: 30vh;
   }
 }
