@@ -13,9 +13,20 @@ export default function POS() {
       <div className="pos-list-grid bg-paper w-full h-full md:row-span-full row-start-1 md:col-span-8 col-span-12 gap-y-4 py-4">
         <div className="row-start-1 mx-4 grid grid-cols-12 gap-2 select-none place-content-around">
           <BrandSideBySide className="col-span-2" />
-          <div className="col-span-2"></div>
+
+          {/* <div className="col-span-2 flex w-auto m-auto ml-0 font-display font-thin text-2xl gap-2 justify-center align-middle items-center text-primary">
+            <Icon name="FaBowlFood" className="text-secondary" />
+            <h1 className="">QuickDine</h1>
+          </div> */}
+
           <SearchBar className="w-auto col-span-7" />
           <ThemeModeToggle className="" />
+          <ButtonToolTip label="New Order" icon="IoMdAdd" variant={"outline"} />
+          <ButtonToolTip
+            label="Order List"
+            icon="FaListUl"
+            variant={"outline"}
+          />
         </div>
 
         <CategoriesSlide className="row-start-2 mx-4" />

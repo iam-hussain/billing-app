@@ -16,7 +16,7 @@ export default function Half({ children }: { children: React.ReactNode }) {
           </h6>
 
           <Link href={"/"}>
-            <BrandStackSlogan className={"w-full max-w-60 md:max-w-xl px-6"} />
+            <BrandStackSlogan className={"w-full"} />
           </Link>
         </div>
 

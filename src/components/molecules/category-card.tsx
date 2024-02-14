@@ -46,12 +46,15 @@ function CategoryCard({
       {onlyText && (
         <Button
           variant={"ghost"}
-          className={clsx("text-sm w-auto rounded-lg", {
-            "border-2 border-secondary text-secondary hover:bg-bw bg-secondary/10":
-              active,
-            "border-2 border-bw text-bw-foreground hover:border-accent":
-              !active,
-          })}
+          className={clsx(
+            "text-sm w-auto rounded-lg active:border-bw-foreground border-2",
+            {
+              "border-secondary bg-secondary text-secondary-foreground hover:bg-bw hover:text-secondary":
+                active,
+              "border-bw text-bw-foreground hover:bg-accent hover:text-accent-foreground":
+                !active,
+            }
+          )}
         >
           {name}
         </Button>

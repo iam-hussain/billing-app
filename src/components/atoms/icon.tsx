@@ -39,6 +39,7 @@ import { FaBowlFood } from "react-icons/fa6";
 import { PiCookingPot } from "react-icons/pi";
 import { PiCookingPotFill } from "react-icons/pi";
 import { MdOutlinePayments } from "react-icons/md";
+import { IoPrint } from "react-icons/io5";
 
 const icons = {
   BiRestaurant,
@@ -81,6 +82,7 @@ const icons = {
   PiCookingPot,
   PiCookingPotFill,
   MdOutlinePayments,
+  IoPrint,
 };
 
 export type IconKey = keyof typeof icons;

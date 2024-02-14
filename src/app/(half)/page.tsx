@@ -14,7 +14,7 @@ export default function Home() {
       <div className="flex flex-col w-full gap-3 md:max-w-xs pt-2">
         <h6 className="text-md font-sans">Need it for your store?</h6>
 
-        <Button variant={"outline"}>Create Account</Button>
+        <Button variant={"secondary"}>Create Account</Button>
       </div>
     </div>
   );

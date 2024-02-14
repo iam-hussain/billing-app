@@ -19,10 +19,9 @@ function ProductCard({
   active?: Boolean;
 }) {
   return (
-    <div
-      tabIndex={0}
+    <button
       className={clsx(
-        "flex flex-col h-full w-full align-middle items-center rounded-lg p-2 bg-bw cursor-pointer text-center select-none hover:border-bw-foreground/40 border-2",
+        "flex flex-col h-full w-full align-middle items-center rounded-lg p-2 bg-bw cursor-pointer text-center select-none hover:text-accent-foreground hover:border-accent-foreground/50 hover:bg-accent active:border-bw-foreground border-2",
         {
           "justify-center": !image,
           "justify-start": image,
@@ -42,7 +41,7 @@ function ProductCard({
       <h5 className="text-base font-semibold">{name || ""}</h5>
       <p className="text-sm text-one-line">{deck || ""}</p>
       <p className="text-sm">{price || "20 ₹"}</p>
-    </div>
+    </button>
   );
 }
 
