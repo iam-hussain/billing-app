@@ -11,11 +11,10 @@ export default function POS() {
   return (
     <>
       <div className="pos-list-grid bg-paper w-full h-full md:row-span-full row-start-1 md:col-span-8 col-span-12 gap-y-4 py-4">
-        <div className="row-start-1 mx-4 grid grid-cols-12 gap-2 select-none place-content-around">
+        <div className="row-start-1 mx-4 grid grid-cols-6 md:grid-cols-12 gap-2 select-none place-content-around gap-y-4">
           <BrandSideBySide className="col-span-2" />
-          <div className="col-span-2"></div>
-          <SearchBar className="w-auto col-span-7" />
-          <ThemeModeToggle className="" />
+          <SearchBar className="w-auto md:col-span-7 md:col-start-5 md:row-start-1 row-start-2 col-span-full" />
+          <ThemeModeToggle className="md:col-start-12 row-start-1 col-span-1 col-start-6" />
         </div>
 
         <CategoriesSlide className="row-start-2 mx-4" />

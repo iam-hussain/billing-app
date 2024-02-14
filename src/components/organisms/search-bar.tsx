@@ -7,8 +7,8 @@ import clsx from "clsx";
 
 function SearchBar({ className }: { className?: string }) {
   return (
-    <div className={clsx("flex gap-2 justify-center align-middle", className)}>
-      <div className="relative w-full">
+    <div className={clsx("grid grid-cols-6 md:grid-cols-7 gap-2", className)}>
+      <div className="relative col-span-5  md:col-span-6">
         <Input type="text" placeholder="Search..." className="bg-bw pr-8" />
 
         <Icon
