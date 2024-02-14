@@ -120,7 +120,7 @@ function CartSummary({ className }: { className?: string }) {
           <p>Today {new Date().toLocaleTimeString()}</p>
         </div>
       </div>
-      <ScrollArea className="w-full flex justify-end grow bg-background">
+      <ScrollArea className="w-full flex justify-end grow bg-background max-h-60vh">
         <div className="flex flex-col py-2 px-4">
           {pendingProducts.map((each, i) => (
             <>

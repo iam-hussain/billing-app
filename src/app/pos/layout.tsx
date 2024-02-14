@@ -10,7 +10,7 @@ export default function POS({ children }: { children: React.ReactNode }) {
     <Container variant={"screen"} className="pos-main-grid gap-0">
       {/* <TopMenu className="col-span-full row-span-1" /> */}
       <SideMenu className="md:row-start-2 md:row-end-13 md:col-span-1 absolute md:relative -left-full md:left-auto top-[56px] md:top-auto z-50" />
-      <section className="grid grid-cols-12 md:grid-rows-12 grid-rows-2 h-full w-ful row-start-2 row-end-13 col-start-2 col-end-13">
+      <section className="pos__primary-section md:h-full h-auto w-ful">
         {children}
       </section>
     </Container>

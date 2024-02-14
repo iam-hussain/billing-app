@@ -109,7 +109,9 @@ const products = [
 
 function ProductList({ className }: { className?: string }) {
   return (
-    <ScrollArea className={clsx("w-full h-full bg-paper", className)}>
+    <ScrollArea
+      className={clsx("w-full h-full bg-paper max-h-60vh", className)}
+    >
       <Container className="grid md:grid-cols-5 grid-cols-2 gap-4 place-items-stretch place-content-around">
         {products.map((product, index) => (
           <div key={index} className="shrink-0">
