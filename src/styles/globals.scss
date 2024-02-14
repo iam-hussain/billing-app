@@ -130,7 +130,7 @@ body {
   grid-column-end: 13;
   grid-column-start: 2;
 
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
     display: flex;
     flex-direction: column;
   }
@@ -172,6 +172,9 @@ body {
   text-overflow: ellipsis;
 }
 
-.max-h-60vh {
-  max-height: 60vh;
+.scroll-area__large {
+  @include breakpoint(md) {
+    max-height: 60dvh;
+    min-height: 30dvh;
+  }
 }
