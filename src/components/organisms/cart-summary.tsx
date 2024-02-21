@@ -122,6 +122,86 @@ function CartSummary({ className }: { className?: string }) {
       </div>
       <ScrollArea className="w-full flex justify-end grow bg-background scroll-area__large">
         <div className="flex flex-col py-2 px-4">
+          {products.map((each, i) => (
+            <>
+              <div
+                key={i}
+                className="flex justify-center items-center align-middle gap-4 rounded-md text-sm font-medium text-inactive"
+              >
+                <span className="grow">{each.name}</span>
+                <div className="flex justify-center align-middle items-center text-center border border-paper">
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="RiSubtractFill" />
+                  </Button>
+                  <span className="min-w-6">1</span>
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="IoMdAdd" />
+                  </Button>
+                </div>
+                <span className="min-w-16 flex justify-end">
+                  ₹ {each.price.toFixed(2)}
+                </span>
+
+                <ButtonToolTip
+                  className="text-bw-foreground"
+                  label={i > 1 ? "Cooked" : "Cooking"}
+                  icon={i > 1 ? "PiCookingPot" : "PiCookingPotFill"}
+                  variant={"transparent"}
+                />
+              </div>
+              {products.length - 1 !== i && <Separator className={"my-2"} />}
+            </>
+          ))}
+
+          <div className="relative my-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Kitchen Pending
+              </span>
+            </div>
+          </div>
+
+          {preparing.map((each, i) => (
+            <>
+              <div
+                key={i}
+                className="flex justify-center items-center align-middle gap-4 rounded-md text-sm font-medium"
+              >
+                <span className="grow">{each.name}</span>
+                <div className="flex justify-center align-middle items-center text-center border border-paper">
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="RiSubtractFill" />
+                  </Button>
+                  <span className="min-w-6">1</span>
+                  <Button className="p-1" variant={"ghost"} disabled>
+                    <Icon name="IoMdAdd" />
+                  </Button>
+                </div>
+                <span className="min-w-16 flex justify-end">
+                  ₹ {each.price.toFixed(2)}
+                </span>
+                <Button variant={"transparent"} className="p-2">
+                  <Icon name="TiDelete" className="h-6 w-6" />
+                </Button>
+              </div>
+              {preparing.length - 1 !== i && <Separator className={"my-2"} />}
+            </>
+          ))}
+
+          <div className="relative my-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Items Addons
+              </span>
+            </div>
+          </div>
+
           {pendingProducts.map((each, i) => (
             <>
               <div
